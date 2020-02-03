@@ -1,0 +1,22 @@
+mat-sidenav-container{
+  min-height: 100vh;
+}
+
+.toolbar-item{
+  cursor: pointer;
+}
+
+mat-list-item{
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+mat-list-item a{
+  text-decoration: none;
+  color: black;
+}
+
+mat-icon{
+  width: 20px;
+  margin-right: 5px;
+}

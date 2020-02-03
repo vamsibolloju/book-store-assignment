@@ -1,0 +1,69 @@
+{
+    "kind": "books#volume",
+    "id": "lGRpeBZQYPoC",
+    "etag": "jhlEE87cBU0",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/lGRpeBZQYPoC",
+    "volumeInfo": {
+     "title": "The Class Of Java",
+     "authors": [
+      "Jain Pravin"
+     ],
+     "publisher": "Pearson Education India",
+     "publishedDate": "2011-09",
+     "industryIdentifiers": [
+      {
+       "type": "ISBN_10",
+       "identifier": "8131755444"
+      },
+      {
+       "type": "ISBN_13",
+       "identifier": "9788131755440"
+      }
+     ],
+     "readingModes": {
+      "text": false,
+      "image": true
+     },
+     "pageCount": 492,
+     "printedPageCount": 461,
+     "printType": "BOOK",
+     "averageRating": 5.0,
+     "ratingsCount": 10,
+     "maturityRating": "NOT_MATURE",
+     "allowAnonLogging": false,
+     "contentVersion": "0.0.1.0.preview.1",
+     "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=lGRpeBZQYPoC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70svzeFef2PwUrRNW5NsDmIUIQWTWKGDZFDpQDiJphz6fyVYdK6yGu8AWxTMQI1udcmp7smK-7TnDyu_vhJtpbU5csmIiVughjBz0lb4LIg8j6donAZE3DO_Q68TUa-4QwpEdqy&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=lGRpeBZQYPoC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72RcV0ULgenAobPYTcCTZ7IbhzPFn6voy1GVoSGeCo0oyWEg-CwE0mqgGVB32LVx7yYUn0IAHXWFfNJvC1lEwG9qp8KhM4DmlafAwuw8EtSypbzuOSCrh9U33C1My5hU2e_QXVp&source=gbs_api",
+      "small": "http://books.google.com/books/content?id=lGRpeBZQYPoC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71c76uk0WRet8MP-jKoOgmpfNP8lIc55Pztx77aorwy7VLHRUU9u2JrMsnwXFWuaEyqqkXbc2jbrwzy1m8WLnXthW-P4dT312qMCtmwOp8oZIFOQ17Kf7dLbuMitgxeexmg3C-n&source=gbs_api",
+      "medium": "http://books.google.com/books/content?id=lGRpeBZQYPoC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70g8Mr5Z4Nzy04hsKJBJmOUg8j7ve-fQ7PyNVeXDY6BaQKSezKQlaC5bjjWkLciw9iVQ6XzmrLMLPFE2b2UWE9XBqwlWXztgZB2lDWW2fuqJBPPrWV1eOq_cLiIcJYm0get_Dum&source=gbs_api",
+      "large": "http://books.google.com/books/content?id=lGRpeBZQYPoC&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE72ra_Trh_9KBmHEiUGSY-8pQZ84QmyctOtwB-YGD1T70B5CVUGcERLXCdr4xBinSnJTm-Qj4sTT132XmGWgmCyJv7Lu8zv9Z3JmKrFv8uqhWL3qCfD0Pfmk9iakx6taCjy50zvE&source=gbs_api",
+      "extraLarge": "http://books.google.com/books/content?id=lGRpeBZQYPoC&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE73XMG_uWfmo7W4RJLanAbfCcLvz-jUXBQSZAUd7GWCP8alyOPYxAJfZdLmZl6HPxYRYqrWpTuSEJ0ZqK35ii-GcFMmmHo-qd6l12qruDLk9FUGDix7D6vTMcwGIuhX3Ahy5GLWE&source=gbs_api"
+     },
+     "language": "en",
+     "previewLink": "http://books.google.co.in/books?id=lGRpeBZQYPoC&hl=&source=gbs_api",
+     "infoLink": "https://play.google.com/store/books/details?id=lGRpeBZQYPoC&source=gbs_api",
+     "canonicalVolumeLink": "https://play.google.com/store/books/details?id=lGRpeBZQYPoC"
+    },
+    "saleInfo": {
+     "country": "IN",
+     "saleability": "NOT_FOR_SALE",
+     "isEbook": false
+    },
+    "accessInfo": {
+     "country": "IN",
+     "viewability": "PARTIAL",
+     "embeddable": true,
+     "publicDomain": false,
+     "textToSpeechPermission": "ALLOWED",
+     "epub": {
+      "isAvailable": false
+     },
+     "pdf": {
+      "isAvailable": false
+     },
+     "webReaderLink": "http://play.google.com/books/reader?id=lGRpeBZQYPoC&hl=&printsec=frontcover&source=gbs_api",
+     "accessViewStatus": "SAMPLE",
+     "quoteSharingAllowed": false
+    }
+   }

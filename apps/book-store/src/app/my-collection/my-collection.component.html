@@ -1,0 +1,15 @@
+<ng-container *ngIf="(collection$ | async) as collection">
+    <mat-list>
+        <mat-list-item *ngFor="let puchasedBook of collection" style="border-bottom: 1px solid;"> 
+            <div >
+                <b> {{puchasedBook.book.volumeInfo.title}} -- {{puchasedBook.quantity}}  </b>  <br>
+                <small> <b> Author(s): </b>  <i> {{puchasedBook.book.volumeInfo.authors}} </i>, 
+                    <b> Published by </b> <i> {{puchasedBook.book.volumeInfo.publisher}} </i>  </small>
+            </div>
+        </mat-list-item>
+    </mat-list>
+
+    <div class="info" [hidden]="collection.length" > 
+        You didn't purchace any books yet, you can explore books <a [routerLink]="['/dashboard']"> here </a>
+    </div>
+</ng-container>

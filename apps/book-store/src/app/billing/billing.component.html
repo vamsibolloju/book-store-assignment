@@ -1,0 +1,16 @@
+<div class="example-container">
+    <mat-form-field>
+      <input #name matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+        <input #email matInput placeholder="Email">
+      </mat-form-field>
+      <mat-form-field>
+        <input #mobile matInput placeholder="Mobile">
+      </mat-form-field>
+  
+    <div class="example-button-row">
+        <button [disabled]="!(name.value && email.value && mobile.value)" mat-raised-button color="primary" (click)="openDialog(name.value, email.value, mobile.value)">Primary</button>
+    </div>
+
+   </div>

@@ -10,5 +10,12 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "book-store-e2e": {
+      "tags": []
+    },
+    "book-store": {
+      "tags": []
+    }
+  }
 }

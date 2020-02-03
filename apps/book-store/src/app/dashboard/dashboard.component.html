@@ -1,0 +1,23 @@
+<div id="query-field-container">
+    <mat-form-field class="example-full-width">
+        <input #query matInput placeholder="Search books" value="" (input)="onQueryChanged($event)" >
+    </mat-form-field>
+</div>
+
+
+
+
+  <mat-grid-list cols="6" rowHeight="1:2">
+    <mat-grid-tile *ngFor="let book of books$ | async">
+      <img *ngIf="book['volumeInfo']['imageLinks']" 
+      (click)="onBookSelect(book)" [src]="book['volumeInfo']['imageLinks']['smallThumbnail']">
+    </mat-grid-tile>
+  </mat-grid-list>
+
+<div class="loading" [hidden]="!(loading$ | async)">
+  loading ...
+</div>
+
+<div [hidden]="query.value" style="text-align: center;">
+    Seach books by typing in search box   
+</div>

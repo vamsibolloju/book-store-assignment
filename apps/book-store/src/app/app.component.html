@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <mat-icon class="toolbar-item" style="width: 30px" svgIcon="list" aria-hidden="false" aria-label="List" (click)="sideNavToggle = !sideNavToggle"></mat-icon>
+  <span class="toolbar-item"> EnLight </span> 
+</mat-toolbar>
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav mode="side" [opened]="sideNavToggle">
+    <mat-list role="list">
+      <mat-list-item *ngFor="let path of paths" role="listitem"> 
+      
+        <mat-icon [svgIcon]="path" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+
+        <a [routerLink]="[ path.replace(' ', '-' ) ]" > {{path}} </a> </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

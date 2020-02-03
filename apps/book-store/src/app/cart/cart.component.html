@@ -1,0 +1,31 @@
+<ng-container *ngIf="(cart$ | async) as cart">
+    <mat-list>
+        <ng-container *ngFor="let cartItem of cart"> 
+            <mat-list-item> 
+                <div style="width: 100%">
+                    <mat-icon class="close" (click)="remove(cartItem)"  aria-hidden="false" aria-label="close"> close </mat-icon>
+                    <p>{{cartItem.book['volumeInfo']['title']}} </p>
+                    <div>
+                        <mat-icon [ngClass]="{ 'disabled' : cartItem.quantity <= 1  }" (click)="decreaseQuantity(cartItem)" svgIcon="remove" aria-hidden="false" aria-label="close"></mat-icon>
+                        <span style="vertical-align: super;"> {{cartItem.quantity}} </span>
+                        <mat-icon (click)="increaseQuantity(cartItem)" svgIcon="add" aria-hidden="false" aria-label="close"></mat-icon>
+                        <span style="margin-left: 10px; vertical-align: super;"> 
+                            Price: ₹ {{cartItem.book.saleInfo.retailPrice.amount * cartItem.quantity }}  </span>
+                    </div>    
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </ng-container>
+        <mat-list-item *ngIf="cart.length">
+            <div style="width: 100%;" >
+                Total price: ₹ {{totalPrice}}
+                <button class="float-right" mat-raised-button color="primary" (click)="buy()">Proceed to buy</button>
+            </div>
+        </mat-list-item>
+    </mat-list>
+    
+    <div style="text-align: center; margin-top: 10px;" [hidden]="cart.length">
+        Cart is empty now, you can search and add books to cart <a [routerLink]="['/dashboard']"> here </a>
+    </div>
+
+</ng-container>

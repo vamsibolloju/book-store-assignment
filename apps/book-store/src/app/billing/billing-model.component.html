@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<div mat-dialog-content>
+  <p>Your purchase is successful! Invoice is sent to your email '{{data.email}}' and message to your mobile '{{data.mobile}}'</p>  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>Got it!</button>
+</div>

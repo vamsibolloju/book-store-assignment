@@ -1,0 +1,21 @@
+.close{
+    cursor: pointer;
+    float: right;
+}
+
+.float-right{
+    float: right;
+}
+
+.mat-list-item{
+    height: 100px;
+}
+
+.mat-icon{
+    cursor: pointer;
+}
+
+.mat-icon.disabled{
+  pointer-events: none;
+  opacity: 0.5;  
+}
