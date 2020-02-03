@@ -55,7 +55,8 @@ const routes: Routes = [
   },
   {
     path: 'billing', component: BillingComponent
-  }
+  },
+  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 
 @NgModule({
