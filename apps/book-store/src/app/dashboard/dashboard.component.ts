@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit {
     private store: Store<AppState>) { }
 
   ngOnInit() {
+
+    
    this.books$ = this.store.select( state => {
      return selectAll(state.books) 
     });
@@ -33,16 +35,14 @@ export class DashboardComponent implements OnInit {
      });
 
      this.query$ = this.store.select(state => state.books['query']);
-     this.query$.subscribe(query => {
-      if(query.length > 2){
-        this.store.dispatch( searchBooks({ query  } ) );
-      }
-     })
-
   }
 
   onQueryChanged(event: Event){
-    this.store.dispatch(updateQuery({ query : event.target['value'] }));
+    const query = event.target['value'];
+    this.store.dispatch(updateQuery({ query }));
+    if(query.length > 2){
+      this.store.dispatch( searchBooks({ query  } ) );
+    }
   }
 
   onBookSelect(book: object){

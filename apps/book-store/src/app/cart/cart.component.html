@@ -19,9 +19,14 @@
         <mat-list-item *ngIf="cart.length">
             <div style="width: 100%;" >
                 Total price: ₹ {{totalPrice}}
-                <button class="float-right" mat-raised-button color="primary" (click)="buy()">Proceed to buy</button>
             </div>
         </mat-list-item>
+        <mat-list-item *ngIf="cart.length">
+            <button  mat-raised-button color="secondary" (click)="clearCart()">Clear Cart</button>
+            <button style="margin-left: 5px;"  mat-raised-button color="primary" (click)="buy()">Proceed to buy</button>
+        </mat-list-item>
+
+
     </mat-list>
     
     <div style="text-align: center; margin-top: 10px;" [hidden]="cart.length">

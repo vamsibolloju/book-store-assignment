@@ -1,5 +1,29 @@
+.active-link{
+  background-color: #8B81B4; 
+  color: white;
+}
+
+.active-link a {
+  color: white;
+}
+
 mat-sidenav-container{
   min-height: 100vh;
+}
+
+mat-sidenav-container mat-icon{
+   margin-left: 5px;
+}
+
+mat-sidenav-container .count{
+  display: inline;
+  background-color: crimson;
+  border-radius: 50%;
+  padding: 4px 5px;
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  left: 3px;
 }
 
 .toolbar-item{
@@ -9,6 +33,16 @@ mat-sidenav-container{
 mat-list-item{
   text-transform: capitalize;
   font-weight: 700;
+  cursor: pointer;
+}
+
+mat-list-item:hover{
+  background-color: #CFCDD8; 
+  color: white;
+}
+
+mat-list-item:hover a {
+  color: white;
 }
 
 mat-list-item a{

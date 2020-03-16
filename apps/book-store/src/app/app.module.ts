@@ -33,8 +33,14 @@ import { BillingModelComponent } from './billing/billing-model.component';
 import { cartReducer } from './store/reducers/cart.reducer';
 import { bookReducer } from './store/reducers/book.reducer';
 import { AppSerializer } from './app-serializer';
-import {  BooksEffects } from './store/effects/searchBooks.effect';
+import {  BooksEffects } from './store/effects/book.effects';
+import {  CartEffects } from './store/effects/cart.effects';
+import {  CollectionEffects } from './store/effects/collection.effects';
+
 import { collectionReducer } from './store/reducers/collection.reducer';
+
+
+import { CustomDropdownDirective } from './dashboard/custom-dropdown.directive';
 
 
 const routes: Routes = [
@@ -67,7 +73,8 @@ const routes: Routes = [
     MyCollectionComponent,
     BookDetailsComponent,
     BillingComponent,
-    BillingModelComponent
+    BillingModelComponent,
+    CustomDropdownDirective
   ],
   entryComponents: [
     BillingModelComponent
@@ -102,7 +109,7 @@ const routes: Routes = [
         }
       }
     ),
-    EffectsModule.forRoot([ BooksEffects ]),
+    EffectsModule.forRoot([ BooksEffects, CartEffects, CollectionEffects ]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot()
   ],

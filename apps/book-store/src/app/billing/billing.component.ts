@@ -4,8 +4,8 @@ import { BillingModelComponent } from './billing-model.component';
 import { Router } from '@angular/router';
 import { AppState } from '../store/model/appState.interface';
 import { Store } from '@ngrx/store';
-import { cartRemoveItems } from '../store/actions/cart.actions';
-import { loadBooksToCollection } from '../store/actions/collection.actions';
+import { cartRemoveItems, cartRemoveItemsAPI } from '../store/actions/cart.actions';
+import { loadBooksToCollection, loadBooksToCollectionServer } from '../store/actions/collection.actions';
 import { selectAll } from '../store/reducers/cart.reducer';
 import { PurchasedBook } from '../store/model/purchasedBook.interface';
 import { CartItem } from '../store/model/cartItem.interface';
@@ -36,8 +36,10 @@ export class BillingComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
         const purchasedBooks : Array<PurchasedBook> = this.cartItems.map( cartItem => ({ ...cartItem, orderedDate: new Date() }) );
-        this.store.dispatch(loadBooksToCollection({ books : purchasedBooks }));
-        this.store.dispatch(cartRemoveItems());
+        
+        this.store.dispatch(loadBooksToCollectionServer({ books : purchasedBooks }));
+        
+        this.store.dispatch(cartRemoveItemsAPI());
         this.router.navigateByUrl('/my-collection');
       });
   }

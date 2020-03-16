@@ -2,14 +2,20 @@
   <mat-icon class="toolbar-item" style="width: 30px" svgIcon="list" aria-hidden="false" aria-label="List" (click)="sideNavToggle = !sideNavToggle"></mat-icon>
   <span class="toolbar-item"> EnLight </span> 
 </mat-toolbar>
-<mat-sidenav-container class="example-container" >
+<mat-sidenav-container class="side-list" >
   <mat-sidenav mode="side" [opened]="sideNavToggle">
-    <mat-list role="list">
-      <mat-list-item *ngFor="let path of paths" role="listitem"> 
-      
+    <mat-list role="list" style="padding-top: 0;">
+      <mat-list-item *ngFor="let path of paths" role="listitem" routerLinkActive="active-link"> 
         <mat-icon [svgIcon]="path" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
 
-        <a [routerLink]="[ path.replace(' ', '-' ) ]" > {{path}} </a> </mat-list-item>
+        <a [routerLink]="[ path.replace(' ', '-' ) ]"   >  {{path}} </a> 
+        <span class="count" *ngIf="path !== 'dashboard' && ( ( path === 'cart' && cartCount ) || ( path === 'my collection' && collectionCount ) ) "> 
+          <span *ngIf="path === 'cart'"> {{cartCount}} </span>
+          <span *ngIf="path === 'my collection'"> {{collectionCount}} </span>
+        </span>
+      
+      </mat-list-item>
+       
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>

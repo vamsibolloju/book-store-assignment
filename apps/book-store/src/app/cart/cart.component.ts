@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/model/appState.interface';
 import { selectAll } from '../store/reducers/cart.reducer'; 
-import { cartLoadItems, cartRemoveItem, cartUpdateItem, cartAddItem } from '../store/actions/cart.actions';
+import { cartLoadItems, cartRemoveItem, cartUpdateItem, cartAddItem, cartRemoveItemAPI, cartRemoveItemsAPI, cartUpdateItemAPI } from '../store/actions/cart.actions';
 import { Observable } from 'rxjs';
 import { CartItem } from '../store/model/cartItem.interface';
 import { Update } from '@ngrx/entity';
 import { Router } from '@angular/router';
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
 @Component({
   selector: 'assignment-cart',
@@ -26,15 +27,19 @@ export class CartComponent implements OnInit {
     
     this.cart$.subscribe((items) => {
         this.totalPrice =  items
-        .map(item => item.book['saleInfo']['retailPrice']['amount'] )
+        .map(item => ( item.quantity * item.book['saleInfo']['retailPrice']['amount'] ) )
         .reduce((a,b) => a+b, 0);
     })
     
     
   }
+
+  clearCart(){
+    this.store.dispatch(cartRemoveItemsAPI());
+  }
   
   remove(book: CartItem){
-    this.store.dispatch(cartRemoveItem({ book }));
+    this.store.dispatch(cartRemoveItemAPI({ book }));
   }
 
   increaseQuantity(book: CartItem){
@@ -54,7 +59,7 @@ export class CartComponent implements OnInit {
       id,
       changes: { quantity }
     };
-    this.store.dispatch( cartUpdateItem( { book  } ) );
+    this.store.dispatch( cartUpdateItemAPI( { book  } ) );
   }
 
 }
