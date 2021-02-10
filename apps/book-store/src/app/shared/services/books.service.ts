@@ -38,7 +38,6 @@ export class BookService {
     }
 
     updateCartItem(changes: object){
-        console.log(changes);
         return this._http.put(`${this.books_url}/cart`, changes)
     }
 

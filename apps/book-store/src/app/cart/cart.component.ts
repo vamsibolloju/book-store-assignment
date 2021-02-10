@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 import { CartItem } from '../store/model/cartItem.interface';
 import { Update } from '@ngrx/entity';
 import { Router } from '@angular/router';
-import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
 @Component({
   selector: 'assignment-cart',

@@ -6,7 +6,7 @@ import { Book } from '../store/model/book.interface';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { CartItem } from '../store/model/cartItem.interface';
-import { cartAddItem, cartUpdateItem, cartAddItemAPI } from '../store/actions/cart.actions';
+import { cartUpdateItem, cartAddItemAPI } from '../store/actions/cart.actions';
 import { selectAll } from '../store/reducers/cart.reducer';
 import { Update } from '@ngrx/entity';
 
@@ -22,7 +22,7 @@ export class BookDetailsComponent implements OnInit {
   constructor(private _bookService: BookService, 
     private store: Store<AppState>, 
     private router: Router,
-    private bookService: BookService) { }
+    ) { }
 
   ngOnInit() {    
     this.store.select(state => state['route']).subscribe(routeData => {
